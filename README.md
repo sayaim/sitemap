@@ -1,4 +1,6 @@
 # vue-crud
+https://www.bezkoder.com/vue-js-node-js-express-mysql-crud-example/
+これで勉強した。ほぼパクリ。
 
 ## Project setup
 ```
