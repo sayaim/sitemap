@@ -1,14 +1,25 @@
 const mysql = require("mysql");
-// Create a connection to the database
-const db = mysql.createConnection({
+
+const config = {
 	host: 'localhost',
 	user: 'root',
-	password: '', 
-	database: '',
-});
-// open the MySQL connection
-db.connect((error) => {
-	if (error) throw error;
-	console.log("Successfully connected to the database.");
-});
-module.exports = db;
+	password: 'rice', 
+	database: 'myapp',
+};
+
+module.exports = {
+	sql(query, values) {
+		console.log(query, "\n", values);
+		return new Promise ((resolve, reject) => {
+			const con = mysql.createConnection(config);
+			con.query(query, values, (err, results, fields) => {
+				if ( err ) {
+					reject(err);
+				} else {
+					resolve(results);
+				}
+			});
+			con.end();
+		});
+	}
+}

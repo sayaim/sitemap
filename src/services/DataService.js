@@ -1,19 +1,25 @@
 import http from "../http-common";
 class DataService {
-	getAll() {
-		return http.get("/memo");
+	index() {
+	return http.get(`/`);
 	}
-	get(id) {
-		return http.get(`/memo/${id}`);
+	
+	edit(id) {
+		return http.get(`/edit/${id}`);
 	}
-	create(data) {
-		return http.post("/memo", data);
+	
+	store(data) {
+		return http.post(`/create`, data);
 	}
-	update(id, data) {
-		return http.put(`/memo/${id}`, data);
+	
+	update(data) {
+		return http.put(`/edit`, data);
 	}
-	delete(id) {
-		return http.delete(`/memo/${id}`);
+	
+	destroy(id) {
+		return http.delete(`/delete/${id}`);
 	}
 }
+
 export default new DataService();
+

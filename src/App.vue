@@ -1,24 +1,15 @@
 <template>
-  <div id="app">
-    <nav class="navbar navbar-dark bg-dark">
-      <li>
-        <button @click="Delete">削除</button>
-      </li>
-      <li>
-          <router-link to="/create">作成</router-link>
-      </li>
-    </nav>
-
-    <div class="container">
-      <MemosList />
-    </div>
+  <div class="container-fluid">
+    <memoList />
   </div>
 </template>
+
 <script>
-import MemosList from "./components/MemosList";
+import memoList from "./components/memoList";
 
 export default {
-  components: { MemosList },
-
+  components: { 
+    memoList,
+  }
 };
 </script>
