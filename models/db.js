@@ -3,8 +3,8 @@ const mysql = require("mysql");
 const config = {
 	host: 'localhost',
 	user: 'root',
-	password: 'rice', 
-	database: 'myapp',
+	password: '', 
+	database: '',
 };
 
 module.exports = {
