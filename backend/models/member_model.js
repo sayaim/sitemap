@@ -1,7 +1,7 @@
-const db = require("./db")
-const table = "memos"
+const db = require("../db/db");
+const table = "members"
 
-const memos = {
+const member = {
 	async all() {
 		const query = `select * from ${table}`;
 		const results = await db.sql(query);
@@ -41,4 +41,4 @@ const memos = {
 	}
 };
 
-module.exports = memos;
+module.exports = member;

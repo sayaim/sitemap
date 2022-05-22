@@ -1,8 +1,10 @@
-import { createApp } from "vue"
-import App from "./App.vue"
-import "bootstrap"
-import "bootstrap/dist/css/bootstrap.min.css"
+import { createApp } from 'vue'
+import App from './App.vue'
+import router from './router'
+import store from './index'
+import 'bootstrap/dist/css/bootstrap.min.css'
 
-// import router from "./router"
-createApp(App).mount("#app")
-// createApp(App).use(router).mount("#app")
+// vue.config.productionTip = false
+
+createApp(App).use(router).use(store).mount('#app')
+

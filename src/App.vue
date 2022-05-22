@@ -1,15 +1,18 @@
 <template>
-  <div class="container-fluid">
-    <memoList />
-  </div>
+  <router-view />
 </template>
 
 <script>
-import memoList from "./components/memoList";
+// import description from "./components/description";
 
 export default {
-  components: { 
-    memoList,
-  }
+  // components: { 
+  //   description,
+	// },
 };
 </script>
+
+<style>
+.container_fluid { width: 100%; }
+	
+</style>
