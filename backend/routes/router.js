@@ -4,17 +4,17 @@ const member = require("../controllers/member_controller");
 const router = require("express").Router();
 
 
-router.get("/admin/edit/:id", admin.edit);
+router.get("/admin/:id", admin.select);
 router.post("/admin/create", admin.create);
 router.put("/admin/edit", admin.update);
 router.delete("/admin/delete/:id", admin.delete);
 
-router.get("/client/edit/:id", client.edit);
+router.get("/client/:id", client.select);
 router.post("/client/create", client.create);
 router.put("/client/edit", client.update);
 router.delete("/client/delete/:id", client.delete);
 
-router.get("/member/edit/:id", member.edit);
+router.get("/member/:id", member.select);
 router.post("/member/create", member.create);
 router.put("/member/edit", member.update);
 router.delete("/member/delete/:id", member.delete);

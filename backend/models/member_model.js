@@ -15,22 +15,23 @@ const member = {
 		return result;
 	},
 
-	async create(form) {
-		const title = form.title;
-		const content = form.content;
+	async create(data) {
+		const admin_id = data.admin_id;
+		const name = data.name;
+		const password = data.password;
 
-		const query = `insert into ${table} (title, content) values(?, ?)`;
-		const values = [title, content];
+		const query = `insert into ${table} (admin_id, name, password) values(?, ?, ?)`;
+		const values = [admin_id, name, password];
 		await db.sql(query, values);
 	},
 
 	async update(data) {
 		const id = data.id;
-		const title = data.title;
-		const content = data.content;
+		const name = data.name;
+		const password = data.password;
 
-		const query = `update ${table} set title = ?, content = ? where id = ?`;
-		const values = [title, content, id];
+		const query = `update ${table} set name = ?, password = ? where id = ?`;
+		const values = [name, password, id];
 		await db.sql(query, values);
 	},
 

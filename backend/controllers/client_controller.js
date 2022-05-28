@@ -6,7 +6,7 @@ const clientController = {
 		res.send(results);
 	},
 
-	async edit(req, res) {
+	async select(req, res) {
 		const id = req.params.id;
 		const result = await client.selectById(id);
 		res.send(result);

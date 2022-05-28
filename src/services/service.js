@@ -4,8 +4,8 @@ const admin = {
 	all() {
 	return http.get(`/admin`);
 	},
-	edit(id) {
-		return http.get(`/admin/edit/${id}`);
+	select(id) {
+		return http.get(`/admin/${id}`);
 	},
 	create(data) {
 		return http.post(`/admin/create`, data);
@@ -22,8 +22,8 @@ const client = {
 	all() {
 	return http.get(`/client`);
 	},
-	edit(id) {
-		return http.get(`/client/edit/${id}`);
+	select(id) {
+		return http.get(`/client/${id}`);
 	},
 	create(data) {
 		return http.post(`/client/create`, data);
@@ -40,8 +40,8 @@ const member = {
 	all() {
 	return http.get(`/member`);
 	},
-	edit(id) {
-		return http.get(`/member/edit/${id}`);
+	select(id) {
+		return http.get(`/member/${id}`);
 	},
 	create(data) {
 		return http.post(`/member/create`, data);
@@ -54,4 +54,4 @@ const member = {
 	},
 }
 
-export { admin,client,member };
+export { admin, client, member };

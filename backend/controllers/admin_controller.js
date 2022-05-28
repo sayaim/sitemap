@@ -6,7 +6,7 @@ const adminController = {
 		res.send(results);
 	},
 
-	async edit(req, res) {
+	async select(req, res) {
 		const id = req.params.id;
 		const result = await admin.selectById(id);
 		res.send(result);
@@ -14,7 +14,8 @@ const adminController = {
 
 	async create(req, res) {
 		const data = req.body;
-		await admin.create(data);
+		const result = await admin.create(data);
+		res.send(result);
 	},
 	
 	async update(req, res) {

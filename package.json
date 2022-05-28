@@ -16,15 +16,15 @@
     "cors": "^2.8.5",
     "dotenv": "^16.0.1",
     "express": "^4.17.3",
-    "firebase": "^9.8.1",
+    "express-session": "^1.17.3",
+    "firebase": "^9.8.2",
     "jquery": "^3.6.0",
     "mysql": "^2.18.1",
     "passport": "^0.6.0",
     "passport-local": "^1.0.0",
     "popper.js": "^1.16.1",
     "vue": "^3.0.0",
-    "vue-router": "^4.0.12",
-    "vuex": "^4.0.2"
+    "vue-router": "^4.0.12"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.15",
