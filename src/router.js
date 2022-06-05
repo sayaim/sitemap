@@ -1,38 +1,30 @@
 import { createRouter, createWebHistory} from 'vue-router'
-import adminLogin from './components/auth/adminLogin.vue'
-import adminRegister from './components/auth/adminRegister.vue'
-import memberLogin from './components/auth/memberLogin.vue'
-import memberRegister from './components/auth/memberRegister.vue'
+import Login from './components/auth/Login.vue'
+import Register from './components/auth/Register.vue'
 import Home from './components/Home.vue'
 
 const routes = [
 	{
-		path: '/',            
+		path: '/home',
 		name: 'home',
 		component: Home,
-		meta: {
-			requiresAuth: true
-		}
+		// meta: {
+		// 	requiresAuth: true
+		// }
 	},
 	{
-		path: '/admin_login',            
-		name: 'admin_login',
-		component: adminLogin,
+		path: '/',
+		redirect: '/login',
 	},
 	{
-		path: '/admin_register',            
-		name: 'admin_register',
-		component: adminRegister,
+		path: '/login',
+		name: 'login',
+		component: Login,
 	},
 	{
-		path: '/member_login',            
-		name: 'member_login',
-		component: memberLogin,
-	},
-	{
-		path: '/member_register',            
-		name: 'member_register',
-		component: memberRegister,
+		path: '/register',
+		name: 'register',
+		component: Register,
 	},
 ]
 
@@ -42,17 +34,15 @@ const router = createRouter({
 })
 
 
-router.beforeEach((to, from, next) => {
-  if (to.matched.some((record) => record.meta.requiresAuth)) {
-		next({
-			path: '/member_login',
-			query: {
-				redirect: to.fullPath,
-			}
-		})
-	} else {
-		next()
-	}
-})
+// router.beforeEach((to, from, next) => {
+//   if (to.matched.some((record) => record.meta.requiresAuth)) {
+// 		next({
+// 			path: '/login',
+// 			query: { redirect: to.fullPath }
+// 		})
+// 	} else {
+// 		next()
+// 	}
+// })
 
 export default router

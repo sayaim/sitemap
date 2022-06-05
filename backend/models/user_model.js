@@ -1,11 +1,16 @@
 const db = require("../db/db");
-const table = "members"
+const table = "users"
 
-const member = {
-	async all() {
-		const query = `select * from ${table}`;
-		const results = await db.sql(query);
-		return results;
+const user = {
+	async login(data) {
+		const email = data.email;
+		const password = data.password;
+
+		// const query = `select exists(select * from ${table} where email = ? and password = ?)`;
+		const query = `select * from ${table} where email = ? and password = ?`;
+		const values = [email, password];
+		const result = await db.sql(query, values);
+		return result;
 	},
 	
 	async selectById(id) {
@@ -16,12 +21,12 @@ const member = {
 	},
 
 	async create(data) {
-		const admin_id = data.admin_id;
-		const name = data.name;
+		const admin = data.admin;
+		const email = data.email;
 		const password = data.password;
 
-		const query = `insert into ${table} (admin_id, name, password) values(?, ?, ?)`;
-		const values = [admin_id, name, password];
+		const query = `insert into ${table} (admin, email, password) values(?, ?, ?)`;
+		const values = [admin, email, password];
 		await db.sql(query, values);
 	},
 
@@ -42,4 +47,4 @@ const member = {
 	}
 };
 
-module.exports = member;
+module.exports = user;

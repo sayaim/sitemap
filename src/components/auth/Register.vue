@@ -6,7 +6,7 @@
 
 					<div class="d-flex align-items-center h-custom-2 px-5 ms-xl-4 mt-5 pt-5 pt-xl-0 mt-xl-n5">
 						<form style="width: 23rem;">
-							<h3 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">メンバー登録</h3>
+							<h3 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">登録</h3>
 
 							<div class="form-outline mb-4">
 								<input type="email" id="form2Example18" class="form-control form-control-lg" v-model="email" />
@@ -55,7 +55,7 @@ export default {
   },
   methods: {
     async register() {
-      const data = {email: this.email, password: this.password};
+      const data = {admin: true, email: this.email, password: this.password};
 			await user.create(data)
 				.then((response) => {
 					console.log(response);

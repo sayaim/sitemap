@@ -10,7 +10,7 @@ const config = {
 
 module.exports = {
 	sql(query, values) {
-		console.log(query, "\n", values);
+		// console.log(query, "\n", values);
 		return new Promise ((resolve, reject) => {
 			const con = mysql.createConnection(config);
 			con.query(query, values, (err, results, fields) => {

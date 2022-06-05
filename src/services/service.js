@@ -1,22 +1,5 @@
 import http from "../http-common";
 
-const admin = {
-	all() {
-	return http.get(`/admin`);
-	},
-	select(id) {
-		return http.get(`/admin/${id}`);
-	},
-	create(data) {
-		return http.post(`/admin/create`, data);
-	},
-	update(data) {
-		return http.put(`/admin/edit`, data);
-	},
-	destroy(id) {
-		return http.delete(`/admin/delete/${id}`);
-	},
-}
 
 const client = {
 	all() {
@@ -36,22 +19,22 @@ const client = {
 	},
 }
 
-const member = {
-	all() {
-	return http.get(`/member`);
+const user = {
+	login(data) {
+		return http.post(`user/login`, data);
 	},
 	select(id) {
-		return http.get(`/member/${id}`);
+		return http.get(`/user/${id}`);
 	},
 	create(data) {
-		return http.post(`/member/create`, data);
+		return http.post(`/user/create`, data);
 	},
 	update(data) {
-		return http.put(`/member/edit`, data);
+		return http.put(`/user/edit`, data);
 	},
 	destroy(id) {
-		return http.delete(`/member/delete/${id}`);
+		return http.delete(`/user/delete/${id}`);
 	},
 }
 
-export { admin, client, member };
+export { client, user };
